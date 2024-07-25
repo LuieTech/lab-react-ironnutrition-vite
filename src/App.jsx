@@ -25,7 +25,6 @@ function App() {
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
       <AddFoodForm onAddFood={handleAddFood} />
-      <FoodBox food={simulatedFood} />
       {foods.map((food, index) => (
         <FoodBox key={index} food={food} onDelete={handleDeleteFood} />
       ))}
