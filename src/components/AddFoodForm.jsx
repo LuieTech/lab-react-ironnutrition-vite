@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Divider, Input, Button } from "antd";
 
 const AddFoodForm = ({ onAddFood }) => {
   const [foodData, setFoodData] = useState({
@@ -18,9 +19,7 @@ const AddFoodForm = ({ onAddFood }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Llama a la función para agregar el nuevo alimento
     onAddFood(foodData);
-    // Restablece los campos del formulario
     setFoodData({
       name: "",
       image: "",
@@ -31,9 +30,11 @@ const AddFoodForm = ({ onAddFood }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <Divider>Add Food Entry</Divider>
+
       <div>
-        <label htmlFor="name">Nombre:</label>
-        <input
+        <label htmlFor="name">Name:</label>
+        <Input
           type="text"
           name="name"
           value={foodData.name}
@@ -41,8 +42,8 @@ const AddFoodForm = ({ onAddFood }) => {
         />
       </div>
       <div>
-        <label htmlFor="image">Imagen:</label>
-        <input
+        <label htmlFor="image">Image:</label>
+        <Input
           type="text"
           name="image"
           value={foodData.image}
@@ -50,8 +51,8 @@ const AddFoodForm = ({ onAddFood }) => {
         />
       </div>
       <div>
-        <label htmlFor="calories">Calorías:</label>
-        <input
+        <label htmlFor="calories">Calories:</label>
+        <Input
           type="number"
           name="calories"
           value={foodData.calories}
@@ -59,15 +60,15 @@ const AddFoodForm = ({ onAddFood }) => {
         />
       </div>
       <div>
-        <label htmlFor="servings">Porciones:</label>
-        <input
+        <label htmlFor="servings">Servings:</label>
+        <Input
           type="number"
           name="servings"
           value={foodData.servings}
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Create</button>
+      <Button type="primary" htmlType="submit">Create</Button>
     </form>
   );
 };

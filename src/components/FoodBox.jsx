@@ -1,24 +1,25 @@
+import { Card, Col, Button } from "antd";
+
 const FoodBox = ({ food, onDelete }) => {
+
   const { id,name, calories, image, servings } = food;
   const totalCalories = servings * calories;
+  
 const handleDelete = () => {
   onDelete(id);
 };
   return (
-    <div>
-      <p>{name}</p>
-
-      <img src={image} alt={name} style={{width: "300px"}} />
-
-      <p>Calories: {calories}</p>
-      <p>Servings: {servings}</p>
-
-      <p>
-        <b>Total Calories: {totalCalories} </b> kcal
-      </p>
-
-      <button onClick={handleDelete}>Delete</button>
-    </div>
+    <Col>
+      <Card title={name} style={{ width: 230, height: 300, margin: 10 }}>
+        <img src={image} height={60} alt="food" />
+        <p>Calories: {calories}</p>
+        <p>Servings: {servings}</p>
+        <p>
+          <b>Total Calories: {totalCalories}</b> kcal
+        </p>
+        <Button type="primary" onClick={handleDelete}> Delete </Button>
+      </Card>
+    </Col>
   );
 };
 
