@@ -9,7 +9,7 @@ const handleDelete = () => {
   onDelete(id);
 };
   return (
-    <Col>
+    <div className="col-12 col-md-6 col-lg-4" >
       <Card title={name} style={{ width: 230, height: 300, margin: 10 }}>
         <img src={image} height={60} alt="food" />
         <p>Calories: {calories}</p>
@@ -19,7 +19,7 @@ const handleDelete = () => {
         </p>
         <Button type="primary" onClick={handleDelete}> Delete </Button>
       </Card>
-    </Col>
+    </div>
   );
 };
 

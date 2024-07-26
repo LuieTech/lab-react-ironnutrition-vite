@@ -68,7 +68,7 @@ const AddFoodForm = ({ onAddFood }) => {
           onChange={handleChange}
         />
       </div>
-      <Button type="primary" htmlType="submit">Create</Button>
+      <Button style={{margin:"20px"}} type="primary" htmlType="submit">Create</Button>
     </form>
   );
 };
